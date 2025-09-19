@@ -1,4 +1,6 @@
-name = "duoquadragintian"
-
-name2 = "duoqu2adragintian"
+title = "CV"
+name = "Dana"
+lastname = "Yohann"
+profession = "Student"
+age = "27"
 
