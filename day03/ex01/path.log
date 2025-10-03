@@ -1,0 +1,129 @@
+2025-09-26T11:38:49,168 Using pip 24.0 from /usr/lib/python3/dist-packages/pip (python 3.12)
+2025-09-26T11:38:49,223 Non-user install due to --prefix or --target option
+2025-09-26T11:38:49,223 Created temporary directory: /tmp/pip-target-v_4ffv1r
+2025-09-26T11:38:49,332 Created temporary directory: /tmp/pip-build-tracker-jv_ssqtz
+2025-09-26T11:38:49,332 Initialized build tracking at /tmp/pip-build-tracker-jv_ssqtz
+2025-09-26T11:38:49,332 Created build tracker: /tmp/pip-build-tracker-jv_ssqtz
+2025-09-26T11:38:49,332 Entered build tracker: /tmp/pip-build-tracker-jv_ssqtz
+2025-09-26T11:38:49,333 Created temporary directory: /tmp/pip-install-1plks3m0
+2025-09-26T11:38:49,333 Created temporary directory: /tmp/pip-ephem-wheel-cache-zb_p_4lz
+2025-09-26T11:38:49,350 Collecting git+https://github.com/jaraco/path.py.git
+2025-09-26T11:38:49,351   Created temporary directory: /tmp/pip-req-build-tabhdhrg
+2025-09-26T11:38:49,352   Cloning https://github.com/jaraco/path.py.git to /tmp/pip-req-build-tabhdhrg
+2025-09-26T11:38:49,352   Running command git version
+2025-09-26T11:38:49,355   git version 2.43.0
+2025-09-26T11:38:49,355   Running command git clone --filter=blob:none --quiet https://github.com/jaraco/path.py.git /tmp/pip-req-build-tabhdhrg
+2025-09-26T11:38:53,010   Running command git rev-parse HEAD
+2025-09-26T11:38:53,016   0f86209f11199ceaff788c73f96ea5b5ec2318ee
+2025-09-26T11:38:53,016   Resolved https://github.com/jaraco/path.py.git to commit 0f86209f11199ceaff788c73f96ea5b5ec2318ee
+2025-09-26T11:38:53,017   Running command git rev-parse HEAD
+2025-09-26T11:38:53,022   0f86209f11199ceaff788c73f96ea5b5ec2318ee
+2025-09-26T11:38:53,023   Added git+https://github.com/jaraco/path.py.git to build tracker '/tmp/pip-build-tracker-jv_ssqtz'
+2025-09-26T11:38:53,032   Created temporary directory: /tmp/pip-build-env-viwayjsl
+2025-09-26T11:38:53,035   Running command pip subprocess to install build dependencies
+2025-09-26T11:38:53,620   Using pip 24.0 from /usr/lib/python3/dist-packages/pip (python 3.12)
+2025-09-26T11:38:54,254   Collecting setuptools>=77
+2025-09-26T11:38:54,255     Obtaining dependency information for setuptools>=77 from https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl.metadata
+2025-09-26T11:38:54,257     Using cached setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+2025-09-26T11:38:54,446   Collecting setuptools_scm>=3.4.1 (from setuptools_scm[toml]>=3.4.1)
+2025-09-26T11:38:54,447     Obtaining dependency information for setuptools_scm>=3.4.1 from https://files.pythonhosted.org/packages/f7/14/dd3a6053325e882fe191fb4b42289bbdfabf5f44307c302903a8a3236a0a/setuptools_scm-9.2.0-py3-none-any.whl.metadata
+2025-09-26T11:38:54,449     Using cached setuptools_scm-9.2.0-py3-none-any.whl.metadata (7.7 kB)
+2025-09-26T11:38:54,569   Collecting coherent.licensed
+2025-09-26T11:38:54,570     Obtaining dependency information for coherent.licensed from https://files.pythonhosted.org/packages/29/0f/01883ea2dc014314a785e5bf5b8c709a6cc4a22442d780c09bb1adb3eee1/coherent_licensed-0.5.2-py3-none-any.whl.metadata
+2025-09-26T11:38:54,572     Using cached coherent_licensed-0.5.2-py3-none-any.whl.metadata (1.9 kB)
+2025-09-26T11:38:54,777   Collecting packaging>=20 (from setuptools_scm>=3.4.1->setuptools_scm[toml]>=3.4.1)
+2025-09-26T11:38:54,777     Obtaining dependency information for packaging>=20 from https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl.metadata
+2025-09-26T11:38:54,780     Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+2025-09-26T11:38:54,796   Using cached setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+2025-09-26T11:38:54,801   Using cached setuptools_scm-9.2.0-py3-none-any.whl (62 kB)
+2025-09-26T11:38:54,803   Using cached coherent_licensed-0.5.2-py3-none-any.whl (4.6 kB)
+2025-09-26T11:38:54,805   Using cached packaging-25.0-py3-none-any.whl (66 kB)
+2025-09-26T11:38:55,526   Installing collected packages: setuptools, packaging, coherent.licensed, setuptools_scm
+2025-09-26T11:38:57,039     Creating /tmp/pip-build-env-viwayjsl/overlay/local/bin
+2025-09-26T11:38:57,040     changing mode of /tmp/pip-build-env-viwayjsl/overlay/local/bin/setuptools-scm to 775
+2025-09-26T11:38:57,052   ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+2025-09-26T11:38:57,052   matplotlib 3.10.3 requires numpy>=1.23, which is not installed.
+2025-09-26T11:38:57,052   Successfully installed coherent.licensed-0.5.2 packaging-25.0 setuptools-80.9.0 setuptools_scm-9.2.0
+2025-09-26T11:38:57,198   Running command Getting requirements to build wheel
+2025-09-26T11:38:57,642   running egg_info
+2025-09-26T11:38:57,647   creating path.egg-info
+2025-09-26T11:38:57,647   writing path.egg-info/PKG-INFO
+2025-09-26T11:38:57,651   writing dependency_links to path.egg-info/dependency_links.txt
+2025-09-26T11:38:57,653   writing requirements to path.egg-info/requires.txt
+2025-09-26T11:38:57,654   writing top-level names to path.egg-info/top_level.txt
+2025-09-26T11:38:57,654   writing manifest file 'path.egg-info/SOURCES.txt'
+2025-09-26T11:38:57,684   adding license file 'LICENSE'
+2025-09-26T11:38:57,685   writing manifest file 'path.egg-info/SOURCES.txt'
+2025-09-26T11:38:57,730   Created temporary directory: /tmp/pip-modern-metadata-s3odek0z
+2025-09-26T11:38:57,730   Running command Preparing metadata (pyproject.toml)
+2025-09-26T11:38:58,032   running dist_info
+2025-09-26T11:38:58,039   creating /tmp/pip-modern-metadata-s3odek0z/path.egg-info
+2025-09-26T11:38:58,039   writing /tmp/pip-modern-metadata-s3odek0z/path.egg-info/PKG-INFO
+2025-09-26T11:38:58,042   writing dependency_links to /tmp/pip-modern-metadata-s3odek0z/path.egg-info/dependency_links.txt
+2025-09-26T11:38:58,045   writing requirements to /tmp/pip-modern-metadata-s3odek0z/path.egg-info/requires.txt
+2025-09-26T11:38:58,045   writing top-level names to /tmp/pip-modern-metadata-s3odek0z/path.egg-info/top_level.txt
+2025-09-26T11:38:58,045   writing manifest file '/tmp/pip-modern-metadata-s3odek0z/path.egg-info/SOURCES.txt'
+2025-09-26T11:38:58,075   adding license file 'LICENSE'
+2025-09-26T11:38:58,077   writing manifest file '/tmp/pip-modern-metadata-s3odek0z/path.egg-info/SOURCES.txt'
+2025-09-26T11:38:58,077   creating '/tmp/pip-modern-metadata-s3odek0z/path-17.1.1.dist-info'
+2025-09-26T11:38:58,188   Source in /tmp/pip-req-build-tabhdhrg has version 17.1.1, which satisfies requirement path==17.1.1 from git+https://github.com/jaraco/path.py.git
+2025-09-26T11:38:58,189   Removed path==17.1.1 from git+https://github.com/jaraco/path.py.git from build tracker '/tmp/pip-build-tracker-jv_ssqtz'
+2025-09-26T11:38:58,242 Created temporary directory: /tmp/pip-unpack-cdqz9btc
+2025-09-26T11:38:58,242 Building wheels for collected packages: path
+2025-09-26T11:38:58,244   Created temporary directory: /tmp/pip-wheel-kd6eg796
+2025-09-26T11:38:58,244   Destination directory: /tmp/pip-wheel-kd6eg796
+2025-09-26T11:38:58,245   Running command Building wheel for path (pyproject.toml)
+2025-09-26T11:38:58,660   running bdist_wheel
+2025-09-26T11:38:58,674   running build
+2025-09-26T11:38:58,675   running build_py
+2025-09-26T11:38:58,680   creating build/lib/path
+2025-09-26T11:38:58,681   copying path/matchers.py -> build/lib/path
+2025-09-26T11:38:58,681   copying path/masks.py -> build/lib/path
+2025-09-26T11:38:58,682   copying path/__init__.py -> build/lib/path
+2025-09-26T11:38:58,682   copying path/classes.py -> build/lib/path
+2025-09-26T11:38:58,683   creating build/lib/path/compat
+2025-09-26T11:38:58,683   copying path/compat/py38.py -> build/lib/path/compat
+2025-09-26T11:38:58,683   running egg_info
+2025-09-26T11:38:58,691   writing path.egg-info/PKG-INFO
+2025-09-26T11:38:58,698   writing dependency_links to path.egg-info/dependency_links.txt
+2025-09-26T11:38:58,700   writing requirements to path.egg-info/requires.txt
+2025-09-26T11:38:58,701   writing top-level names to path.egg-info/top_level.txt
+2025-09-26T11:38:58,734   adding license file 'LICENSE'
+2025-09-26T11:38:58,736   writing manifest file 'path.egg-info/SOURCES.txt'
+2025-09-26T11:38:58,737   copying path/py.typed -> build/lib/path
+2025-09-26T11:38:58,750   installing to build/bdist.linux-x86_64/wheel
+2025-09-26T11:38:58,750   running install
+2025-09-26T11:38:58,769   running install_lib
+2025-09-26T11:38:58,777   creating build/bdist.linux-x86_64/wheel
+2025-09-26T11:38:58,778   creating build/bdist.linux-x86_64/wheel/path
+2025-09-26T11:38:58,780   copying build/lib/path/matchers.py -> build/bdist.linux-x86_64/wheel/./path
+2025-09-26T11:38:58,780   copying build/lib/path/py.typed -> build/bdist.linux-x86_64/wheel/./path
+2025-09-26T11:38:58,780   creating build/bdist.linux-x86_64/wheel/path/compat
+2025-09-26T11:38:58,780   copying build/lib/path/compat/py38.py -> build/bdist.linux-x86_64/wheel/./path/compat
+2025-09-26T11:38:58,781   copying build/lib/path/masks.py -> build/bdist.linux-x86_64/wheel/./path
+2025-09-26T11:38:58,781   copying build/lib/path/__init__.py -> build/bdist.linux-x86_64/wheel/./path
+2025-09-26T11:38:58,782   copying build/lib/path/classes.py -> build/bdist.linux-x86_64/wheel/./path
+2025-09-26T11:38:58,782   running install_egg_info
+2025-09-26T11:38:58,790   Copying path.egg-info to build/bdist.linux-x86_64/wheel/./path-17.1.1-py3.12.egg-info
+2025-09-26T11:38:58,794   running install_scripts
+2025-09-26T11:38:58,795   creating build/bdist.linux-x86_64/wheel/path-17.1.1.dist-info/WHEEL
+2025-09-26T11:38:58,796   creating '/tmp/pip-wheel-kd6eg796/.tmp-q67gk8w0/path-17.1.1-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+2025-09-26T11:38:58,800   adding 'path/__init__.py'
+2025-09-26T11:38:58,801   adding 'path/classes.py'
+2025-09-26T11:38:58,802   adding 'path/masks.py'
+2025-09-26T11:38:58,803   adding 'path/matchers.py'
+2025-09-26T11:38:58,803   adding 'path/py.typed'
+2025-09-26T11:38:58,805   adding 'path/compat/py38.py'
+2025-09-26T11:38:58,808   adding 'path-17.1.1.dist-info/licenses/LICENSE'
+2025-09-26T11:38:58,808   adding 'path-17.1.1.dist-info/METADATA'
+2025-09-26T11:38:58,809   adding 'path-17.1.1.dist-info/WHEEL'
+2025-09-26T11:38:58,810   adding 'path-17.1.1.dist-info/top_level.txt'
+2025-09-26T11:38:58,811   adding 'path-17.1.1.dist-info/RECORD'
+2025-09-26T11:38:58,812   removing build/bdist.linux-x86_64/wheel
+2025-09-26T11:38:58,891   Created wheel for path: filename=path-17.1.1-py3-none-any.whl size=23936 sha256=2f2fa76bc6c808945830e90fd4f00a871d53bdcb1ad86f00fe0cdd2b8a9dd13d
+2025-09-26T11:38:58,892   Stored in directory: /tmp/pip-ephem-wheel-cache-zb_p_4lz/wheels/46/86/12/96fae8a79e3cec0b5d8b84e94b8429b81d8bad98770ab6a9c1
+2025-09-26T11:38:58,899 Successfully built path
+2025-09-26T11:38:59,552 Installing collected packages: path
+
+2025-09-26T11:38:59,649 Successfully installed path-17.1.1
+2025-09-26T11:38:59,651 Removed build tracker: '/tmp/pip-build-tracker-jv_ssqtz'
