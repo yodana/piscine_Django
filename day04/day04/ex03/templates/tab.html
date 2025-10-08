@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ex03 : Tableau.</title>
+        {{style|safe}}
+    </head>
+    <body>
+        <table>
+            {% for item in tab %}
+                {{ item|safe }}
+            {% endfor %}
+        </table>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}
+    Ex01 : Processus d’affichage d’une page statique.
+{% endblock %}
+
+{% block content %}
+<p>1. L'utilisateur ouvre une page dans son navigateur, ce qui envoie une requête au serveur.</p>
+<p>2. Django regarde l'URL demandée et choisit la vue correspondante dans urls.py.</p>
+<p>3. La vue (fonction Python) prépare la réponse et utilise un template si nécessaire.</p>
+<p>4. Le template génère le code HTML de la page.</p>
+<p>5. Django renvoie le HTML au navigateur, qui affiche la page.</p>
+{% endblock %}

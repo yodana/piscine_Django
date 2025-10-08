@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %} <link rel="stylesheet" href="{% static 'style2.css' %}"> {% endblock %}
+
+{% block title %} Ex01 : Moteur de template. {% endblock %}
+{% block content %}
+<p>Le moteur de templates de Django permet de générer dynamiquement du code HTML en combinant des fichiers HTML avec des variables et des structures de contrôle Python-like. Il transforme les templates en pages HTML prêtes à être affichées par le navigateur.</p>
+
+<p>Les blocs : Ils permettent de définir des sections de contenu réutilisables dans un template parent et de les remplacer dans des templates enfants. On utilise par exemple  pour marquer une zone modifiable.</p>
+
+<p>Les boucles for ... in : Elles permettent d’itérer sur une liste ou un dictionnaire passé au template. Exemple :</p>
+
+<p>Les structures de contrôle if : Elles permettent de conditionner l’affichage d’un contenu selon une variable. Exemple :</p>
+
+<p>Affichage de variables : Les variables passées par contexte depuis la vue peuvent être affichées avec les doubles accolades <code>{{ variable }}</code>. Exemple : si la vue envoie <code>{'nom': 'Alice'}</code>, dans le template <code>{{ nom }}</code> affichera "Alice".</p>
+{% endblock %}
