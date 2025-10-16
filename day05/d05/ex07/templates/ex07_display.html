@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Display</title>
+        <style>
+            td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Episode</th>
+                <th>Title</th>
+                <th>Opening Crawl</th>
+                <th>Director</th>
+                <th>Producer</th>
+                <th>Release date</th>
+                <th>Created</th>
+                <th>Updated</th>
+            </tr>
+            {% for movie in result %}
+                {{ movie | safe}}
+            {% endfor %}
+        </table>
+    </body>
+</html>

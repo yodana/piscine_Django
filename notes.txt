@@ -1,0 +1,3 @@
+A faire ex00:
+# Voir si les articles sont bien affiches.
+# Faire 5 article de 3 users differents

@@ -1,0 +1,6 @@
+Django==4.2.*
+psycopg2-binary
+requests
+bs4
+django-extensions
+django-bootstrap5

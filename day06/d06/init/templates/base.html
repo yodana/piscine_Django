@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block title %}
+            <title>Life Pro Tips</title>
+        {% endblock %}
+        {% load django_bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+    {% include "nav.html" %}
+    <body>
+        {% block content %}
+        {% for tip in tips %}
+            <div class="card mb-2">
+                <div class="card-body">
+                    <h5 class="card-title">Par {{ tip.auteur }}</h5>
+                    <p class="card-text">{{ tip.contenu }}</p>
+                    <p class="card-text"> Cree le {{ tip.date }}</p>
+                    <p>Upvote : {{ tip.upvote.count }}</p>
+                    <p>Downvote : {{ tip.downvote.count }}</p>
+                </div>
+                {% if request.user.is_authenticated %}
+                {% if request.user == tip.auteur or request.user.has_permission %}
+                    {% if  tip.downvote.count > tip.upvote.count or request.user == tip.auteur %}
+                    <form method="post" action="{% url 'delete' tip.id %}">
+                        {% csrf_token %}
+                    <input type="submit" class="btn btn-primary" value="Supprimer"></input>
+                    </form>
+                    {% endif %}
+                {% endif %} 
+                <form method="post" action="{% url 'upvote' tip.id %}">
+                    {% csrf_token %}
+                <input type="submit" class="btn btn-primary" value="Up"></input>
+                </form>
+                {% if request.user.can_downvote or request.user == tip.auteur %}
+                    <form method="post" action="{% url 'downvote' tip.id %}">
+                        {% csrf_token %}
+                    <input type="submit" class="btn btn-primary" value="Down"></input>
+                {% endif %}
+                </form>
+                {% endif %}
+            </div>
+        {% endfor %}
+        {% if request.user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+        {% endif %}
+        {% endblock %}
+    </body>
+</html>

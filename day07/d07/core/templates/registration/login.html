@@ -1,0 +1,15 @@
+<form method="post">
+    {% csrf_token %}
+{% for field in form %}
+        {{ field.label_tag }}
+        {{ field }}
+{% endfor %}
+<input type="submit" class="btn btn-primary" value="Submit">
+{% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger mt-3" role="alert">
+            {{ error }}
+        </div>
+    {% endfor %}
+{% endif %}
+</form>

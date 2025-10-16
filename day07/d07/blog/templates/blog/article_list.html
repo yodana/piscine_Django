@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+    {% block content %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Auteur</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Synopsis</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+        {% for article in object_list %}
+                <tbody>
+                <tr>
+                    <td>
+                    {{ article.author }}
+                    </td>
+                    <td>
+                    {{ article.title }}
+                    </td>
+                    <td>
+                    {{ article.created }}
+                    </td>
+                    <td>
+                    {{ article.synopsis }}
+                    </td>
+                    <td>
+                        <a href="{% url 'article' article.id %}">Voir</a>
+                    </td>
+                </tr>
+                </tbody>
+        {% endfor %}
+        </table>
+        {% endblock %}
