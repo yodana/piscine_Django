@@ -7,6 +7,7 @@
                     <th>Date</th>
                     <th>Synopsis</th>
                     <th>Details</th>
+                    <th> Since</th>
                 </tr>
             </thead>
         {% for article in object_list %}
@@ -19,13 +20,17 @@
                     {{ article.created }}
                     </td>
                     <td>
-                    {{ article.synopsis }}
+                    {{ article.synopsis|truncatechars:20 }}
                     </td>
                     <td>
                         <a href="{% url 'article' article.id %}">Voir</a>
+                    </td>
+                    <td>
+                        {{ article.created |timesince }}
                     </td>
                 </tr>
                 </tbody>
         {% endfor %}
         </table>
+        <a href="{% url 'publish' %}"> Publish an article</a>
 {% endblock %}

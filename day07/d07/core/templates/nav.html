@@ -1,7 +1,33 @@
-<nav>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark  mb-4">
+    <ul class="navbar-nav">
+        <li class="nav-item"><a href="{% url 'home' %}"> Home</a></li>
+        <li class="nav-item"><a href="{% url 'articles' %}">Last Articles</a></li>
+
+    </ul>
+    {% if not request.user.is_authenticated %}
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="{% url 'register' %}">Register</a>
+        </li>
+        <li class="nav-item" >
+             <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                 {{ login.as_p }}
+            <button type="submit" class="btn btn-default">Login</button>
+          </form>
+        </li>
+        {% endif %}
+    </ul>
     {% if request.user.is_authenticated %}
-    <ul>
-        <li>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="{% url 'favorite' %}"> Favourites</a>
+        </li>
+          <li class="nav-item">
+            <a href="{% url 'publication' %}"> Publication</a>
+        </li>
+        <li class="nav-item"> Logged as {{ request.user }}</li>
+        <li class="nav-item">
         <a href="{% url 'logout'  %}">Logout</a>
         </li>
     {% endif %}

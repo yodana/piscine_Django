@@ -8,6 +8,7 @@
                     <th>Date</th>
                     <th>Synopsis</th>
                     <th>Content</th>
+                    <th> Since </th>
                 </tr>
             </thead>
                 <tbody>
@@ -27,8 +28,16 @@
                     <td>
                         {{ article.content }}
                     </td>
+                    <td>
+                        {{ article.created |timesince }}
+                    </td>
                 </tr>
                 </tbody>
         </table>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Add to favorite</button>
+        </form>
         {% endblock %}
 

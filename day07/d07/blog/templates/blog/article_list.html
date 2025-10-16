@@ -8,6 +8,7 @@
                     <th>Date</th>
                     <th>Synopsis</th>
                     <th>Details</th>
+                    <th>Since</th>
                 </tr>
             </thead>
         {% for article in object_list %}
@@ -24,6 +25,9 @@
                     </td>
                     <td>
                     {{ article.synopsis }}
+                    </td>
+                    <td>
+                        {{ article.created |timesince }}
                     </td>
                     <td>
                         <a href="{% url 'article' article.id %}">Voir</a>
