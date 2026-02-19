@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Articles</title>
+        <title>Site d07</title>
         {% load django_bootstrap5 %}
         {% bootstrap_css %}
         {% bootstrap_javascript %}
@@ -10,6 +10,33 @@
             table, th, td {
                 border: 1px solid black;
             }
+            .navbar {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            }
+
+            .nav-link {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.2rem !important;
+            }
+            
+            .nav-link{
+                color: rgb(255, 255, 255);
+                opacity: 0.5;
+            }
+
+            .nav-link.active {
+                background-color: rgba(0, 0, 0, 0.5);
+                color:rgb(255, 255, 255) !important;
+                opacity: 1;
+            }
+
+            .navbar-text {
+            color: rgb(255, 255, 255);
+            }
+
         </style>
     </head>
     {% include "nav.html" %}

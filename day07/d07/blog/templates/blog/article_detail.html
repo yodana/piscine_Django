@@ -1,14 +1,15 @@
 {% extends "base.html" %}
+{% load i18n %}
  {% block content %}
  <table>
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Author</th>
+                    <th>{% trans "Title" %}</th>
+                    <th>{% trans "Author" %}</th>
                     <th>Date</th>
                     <th>Synopsis</th>
-                    <th>Content</th>
-                    <th> Since </th>
+                    <th>{% trans "Content" %}</th>
+                    <th> {% trans "Since" %} </th>
                 </tr>
             </thead>
                 <tbody>
@@ -20,6 +21,7 @@
                         {{ article.author }}
                     </td>
                     <td>
+                    {% language 'en' %}
                     {{ article.created }}
                     </td>
                     <td>
@@ -31,13 +33,14 @@
                     <td>
                         {{ article.created |timesince }}
                     </td>
+                    {% endlanguage %}
                 </tr>
                 </tbody>
         </table>
         <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Add to favorite</button>
+            <button type="submit" class="btn btn-primary">{% trans "Add to favorite" %}</button>
         </form>
         {% endblock %}
 

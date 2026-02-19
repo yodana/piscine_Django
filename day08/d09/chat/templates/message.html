@@ -1,0 +1,125 @@
+<h1>Chat {{room_name}}</h1>
+{% if user_connected %}
+<div class="error">
+    <p>Error: You can't open two windows for the same chat room</p>
+</div>
+{% else %}
+<div class="message" id="chatContainer">
+    <!-- Received messages are displayed here -->
+    {% for i in messages %}
+    {% if i.connected %}
+       <div class="receive">
+            <p style="color: #000;"> {{i.message}}</p>
+    </div>
+    {% else %}
+      <div class="receive">
+            <p style="color: #000;"> {{i.message}}<strong>-{{i.sender}}</strong></p>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <!-- End of received messages -->
+</div>
+    <div class="form">
+        <form action="" id="message-form" method="POST">
+            {% csrf_token %}
+            <textarea id="msg" cols="30" name="message" rows="10" placeholder="Enter your message" required></textarea>
+            <button class="submit" type="submit">Send</button>
+        </form>    
+    </div>
+    <div>
+        <h2>Connected users</h2>
+        <div class="connected-users">
+
+        </div>
+     </div>
+<script>
+    // Determine the WebSocket protocol based on the application's URL
+    const socket = new WebSocket('ws://' + window.location.host + '/ws/notification/{{room_name}}/');
+
+    // Create a new WebSocket connection
+    // Successful connection event
+    
+    
+    socket.onopen = (event) => {
+        console.log("WebSocket connection opened!");
+    };
+
+    // Socket disconnect event
+    socket.onclose = (event) => {
+        console.log("WebSocket connection closed!");
+    };
+
+    // Form submit listener
+    document.getElementById('message-form').addEventListener('submit', function(event){
+        event.preventDefault();
+        console.log("test")
+        const uniqueId = crypto.randomUUID();
+        const message = document.getElementById('msg').value;
+        socket.send(
+            JSON.stringify({
+                'message': message,
+                'room_name': '{{room_name}}',
+                'sender': '{{user}}',
+                'unique_id': uniqueId,
+                'connected': false,
+            })
+        );
+    });
+    // Response from consumer on the server
+    socket.addEventListener("message", (event) => {
+        const messageData = JSON.parse(event.data)['message'];
+        var type = messageData['type'];
+        console.log(messageData)
+        if (type == 'error_connected'){
+            AllDiv = document.querySelector('.message');
+            AllDiv.innerHTML = "";
+            AllDiv.innerHTML = "Error : You are already connected to this room";
+            form = document.querySelector('.form');
+            form.innerHTML = '';
+            setTimeout(() => {
+                document.location.href = "/chat/" ;
+            }, 1000);
+        }
+        else if (type == 'send_user_connected'){
+            var Userconnected = document.querySelector('.connected-users');
+            Userconnected.innerHTML = '';
+            messageData["users"].forEach(user => {
+                Userconnected.innerHTML += '<div class="receive"><p style="color: #000;">' + user + '</p></div>';
+            });
+        }
+        else if (type == 'user_connected'){
+            var messageDiv = document.querySelector('.message');
+            messageDiv.innerHTML += '<div class="receive"><p style="color: #000;">' + messageData['user'] + ' has join the chat</p></div>';
+        }
+        else if (type == 'user_deconnected'){
+            var messageDiv = document.querySelector('.message');
+            messageDiv.innerHTML += '<div class="receive"><p style="color: #000;">' + messageData['user'] + ' has left the chat</p></div>';
+        }
+        else{
+            var sender = messageData['sender'];
+            var message = messageData['message'];
+            var connected = messageData['connected'];
+            if (sender == '{{user}}'){
+            document.getElementById('msg').value = '';
+            }
+             // Append the message to the chatbox
+            var messageDiv = document.querySelector('.message');
+            if (connected != true) { // Assuming you have a variable `currentUser` to hold the current user's name
+                messageDiv.innerHTML += '<div class="receive"><p style="color: #000;">' + message + '<strong>-' + sender + '</strong></p></div>';
+            }
+            else {
+                messageDiv.innerHTML += '<div class="send"><p style="color: #000;">' + message + '</p></div>';
+            }
+        }
+        scrollToBottom();
+    });
+
+</script>
+
+<script>
+    function scrollToBottom() {
+        var chatContainer = document.getElementById("chatContainer");
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+</script>
+{% endif %}

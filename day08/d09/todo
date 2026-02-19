@@ -1,0 +1,13 @@
+# Solution
+-> Essayer de faire une SEUL connexion par user
+Pour cela mettre un user et la room dans Userconnected quand on se connecte
+
+# Probleme avec dessus
+-> undefined et pas de creation de message models
+
+Verfier dans consumer.connect si le user est deja dans USerconnected
+Si oui, on affiche un message en disant que plusieurs fenetres ne peuvent pas etre ouvertes
+Si non, on ajoute le user et la room dans USerconnected
+
+Dans le consumer.disconnect, on supprime le user et la room dans Userconnected
+

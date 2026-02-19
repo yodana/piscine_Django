@@ -1,14 +1,15 @@
 {% extends "base.html" %}
+{% load i18n %}
     {% block content %}
         <table>
             <thead>
                 <tr>
-                    <th>Auteur</th>
-                    <th>Title</th>
+                    <th>{% trans "Author" %}</th>
+                    <th>{% trans "Title" %}</th>
                     <th>Date</th>
                     <th>Synopsis</th>
+                    <th>{% trans "Since" %}</th>
                     <th>Details</th>
-                    <th>Since</th>
                 </tr>
             </thead>
         {% for article in object_list %}
@@ -21,6 +22,7 @@
                     {{ article.title }}
                     </td>
                     <td>
+                    {% language 'en' %}
                     {{ article.created }}
                     </td>
                     <td>
@@ -29,8 +31,9 @@
                     <td>
                         {{ article.created |timesince }}
                     </td>
+                    {% endlanguage %}
                     <td>
-                        <a href="{% url 'article' article.id %}">Voir</a>
+                        <a href="{% url 'article' article.id %}">{% trans "See" %}</a>
                     </td>
                 </tr>
                 </tbody>

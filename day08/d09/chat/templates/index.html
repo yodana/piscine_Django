@@ -1,0 +1,5 @@
+<div>
+    {% for room in rooms %}
+    <a href="{% url 'room' room.room_name %}">{{room.room_name}}</a>
+    {% endfor %}
+</div>

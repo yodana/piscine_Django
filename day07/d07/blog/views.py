@@ -40,7 +40,7 @@ class FavoriteView(ListView):
     model = UserFavoriteArticle
     template_name = 'blog/favorite_list.html'
     def get_queryset(self):
-        return UserFavoriteArticle.objects.filter(user=self.request.user)
+        return self.request.user.favourites.all()
     
 @method_decorator(login_required, name='dispatch') #applique le decorator a la method dispatch
 class PublishView(CreateView):

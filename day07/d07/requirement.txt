@@ -4,3 +4,6 @@ requests
 bs4
 django-extensions
 django-bootstrap5
+django-widget-tweaks
+channels
+daphne
